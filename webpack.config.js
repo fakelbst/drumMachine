@@ -26,7 +26,16 @@ module.exports = {
       },
       {
         test:   /\.css$/,
-        loader: 'style-loader!css-loader!postcss-loader'
+        include: /src/,
+        loaders: ['style-loader',
+          'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          'postcss-loader'
+        ]
+      },
+      {
+        test: /\.css$/,
+        exclude: /src/,
+        loader: 'style!css'
       },
       {
         test: /\.(js|jsx)$/,
@@ -41,6 +50,9 @@ module.exports = {
   postcss: function () {
     return [ autoprefixer];
   },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
+  ],
   devServer: {
     contentBase: './src',
     hot: true
