@@ -2,7 +2,19 @@ import { handleActions } from 'redux-actions'
 
 const initialState = [{
   el: '',
+  title: '_cymbal',
+  playing: false
+}, {
+  el: '',
   title: '_hihat',
+  playing: false
+}, {
+  el: '',
+  title: '_bass',
+  playing: false
+}, {
+  el: '',
+  title: '_snare',
   playing: false
 }, {
   el: '',
@@ -11,18 +23,6 @@ const initialState = [{
 }, {
   el: '',
   title: '_tom3',
-  playing: false
-}, {
-  el: '',
-  title: '_snare',
-  playing: false
-}, {
-  el: '',
-  title: '_cymbal',
-  playing: false
-}, {
-  el: '',
-  title: '_bass',
   playing: false
 }]
 

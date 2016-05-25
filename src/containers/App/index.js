@@ -8,10 +8,10 @@ import style from './style.css'
 
 class App extends Component {
   render() {
-    const { actions } = this.props
+    const { sources, actions } = this.props
     return (
       <div className={style.fullheight}>
-        <DrumKit actions={actions}/>
+        <DrumKit sources={sources} actions={actions}/>
         <Sounds sels={{}} actions={actions}/>
       </div>
     )
@@ -20,7 +20,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    playing: state.playing
+    sources: state.controls
   }
 }
 

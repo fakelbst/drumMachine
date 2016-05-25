@@ -11,21 +11,25 @@
   width: 100%;
 }
 
-.block-1 {
+.block-_cymbal {
   background-color: #D5D2CB;
 }
-.block-2 {
+.block-_hihat {
   background-color: #868E8E;
 }
-.block-3 {
+.block-_bass {
   background-color: #8C8781;
 }
-.block-4 {
+.block-_snare {
   background-color: #434B4E;
 }
-.block-5 {
+.block-_tom1 {
   background-color: #C9B99F;
 }
-.block-6 {
+.block-_tom3 {
   background-color: #92623E;
+}
+
+.playing {
+  opacity: 0.8;
 }
