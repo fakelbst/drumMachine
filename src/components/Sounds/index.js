@@ -18,7 +18,7 @@ class Sounds extends Component {
     return (
       <div>
         <audio onEnded={() => this.handlePlayEnded('_hihat')} preload="auto" ref={(c) => this.props.sels['_hihat'] = c}>
-          <source src="public/media/Yamaha-RX15-Open-Hi-Hat.wav" type="audio/wav" />
+          <source src="public/media/Yamaha-RX15-Closed-Hi-Hat.wav" type="audio/wav" />
         </audio>
         <audio onEnded={() => this.handlePlayEnded('_tom1')} preload="auto" ref={(c) => this.props.sels['_tom1'] = c}>
           <source src="public/media/Yamaha-RX15-Tom1.wav" type="audio/wav" />
