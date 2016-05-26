@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var autoprefixer = require('autoprefixer')
+var precss = require('precss')
 var path = require('path')
 
 module.exports = {
@@ -48,7 +49,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   postcss: function () {
-    return [ autoprefixer];
+    return [ autoprefixer, precss];
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')

@@ -9,6 +9,10 @@
 .block {
   height: 100%;
   width: 100%;
+  position: relative;
+  span {
+    text-transform: capitalize;
+  }
 }
 
 .block-_cymbal {
@@ -30,6 +34,29 @@
   background-color: #92623E;
 }
 
+.icon {
+  font-size: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 .playing {
-  opacity: 0.8;
+  animation: anim-effect-boris 0.5s forwards;
+}
+
+@keyframes anim-effect-boris {
+  0% {
+    opacity: 1;
+    transform: scale3d(0.4, 0.4, 1);
+  }
+  80% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1);
+  }
 }
