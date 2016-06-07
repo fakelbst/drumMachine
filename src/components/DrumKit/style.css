@@ -10,6 +10,8 @@
   height: 100%;
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
   span {
     text-transform: capitalize;
   }
@@ -43,11 +45,20 @@
   margin: auto;
 }
 
-.playing {
-  animation: anim-effect-boris 0.5s forwards;
+.bottom {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  background: transparent url(data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA9JREFUeNpiYGBgkAIIMAAAHwAbZIBtGgAAAABJRU5ErkJggg==) repeat scroll 0 0;
+  height: 5px;
+  width: 100%;
 }
 
-@keyframes anim-effect-boris {
+.playing {
+  animation: scale-playing 0.5s forwards;
+}
+
+@keyframes scale-playing {
   0% {
     opacity: 1;
     transform: scale3d(0.4, 0.4, 1);

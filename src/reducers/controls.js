@@ -3,27 +3,43 @@ import { handleActions } from 'redux-actions'
 const initialState = [{
   el: '',
   title: '_cymbal',
-  playing: false
+  playing: false,
+  type: '_cymbal'
 }, {
   el: '',
-  title: '_hihat',
-  playing: false
+  title: '_hihat_closed',
+  playing: false,
+  type: '_hihat'
+}, {
+  el: '',
+  title: '_hihat_open',
+  playing: false,
+  type: '_hihat'
 }, {
   el: '',
   title: '_bass',
-  playing: false
+  playing: false,
+  type: '_bass'
 }, {
   el: '',
   title: '_snare',
-  playing: false
+  playing: false,
+  type: '_snare'
 }, {
   el: '',
   title: '_tom1',
-  playing: false
+  playing: false,
+  type: '_tom'
+}, {
+  el: '',
+  title: '_tom2',
+  playing: false,
+  type: '_tom'
 }, {
   el: '',
   title: '_tom3',
-  playing: false
+  playing: false,
+  type: '_tom'
 }]
 
 export default handleActions({

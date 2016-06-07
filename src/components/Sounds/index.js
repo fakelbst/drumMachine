@@ -17,11 +17,17 @@ class Sounds extends Component {
 
     return (
       <div>
-        <audio onEnded={() => this.handlePlayEnded('_hihat')} preload="auto" ref={(c) => this.props.sels['_hihat'] = c}>
+        <audio onEnded={() => this.handlePlayEnded('_hihat_closed')} preload="auto" ref={(c) => this.props.sels['_hihat_closed'] = c}>
           <source src="public/media/Yamaha-RX15-Closed-Hi-Hat.wav" type="audio/wav" />
+        </audio>
+        <audio onEnded={() => this.handlePlayEnded('_hihat_open')} preload="auto" ref={(c) => this.props.sels['_hihat_open'] = c}>
+          <source src="public/media/Yamaha-RX15-Open-Hi-Hat.wav" type="audio/wav" />
         </audio>
         <audio onEnded={() => this.handlePlayEnded('_tom1')} preload="auto" ref={(c) => this.props.sels['_tom1'] = c}>
           <source src="public/media/Yamaha-RX15-Tom1.wav" type="audio/wav" />
+        </audio>
+        <audio onEnded={() => this.handlePlayEnded('_tom2')} preload="auto" ref={(c) => this.props.sels['_tom2'] = c}>
+          <source src="public/media/Yamaha-RX15-Tom2.wav" type="audio/wav" />
         </audio>
         <audio onEnded={() => this.handlePlayEnded('_tom3')} preload="auto" ref={(c) => this.props.sels['_tom3'] = c}>
           <source src="public/media/Yamaha-RX15-Tom3.wav" type="audio/wav" />
