@@ -17,7 +17,7 @@ class DrumKit extends Component {
               source.type === c ?
               <div className={classnames({[style.block]: true})} onClick={(el) => actions.playSound(source.title)}>
                 <span>{source.title.slice(1)}</span>
-                <GoUnmute className={classnames({[style.icon]: true, [style.playing]: source.playing})} />
+                <GoUnmute className={classnames({[style.icon]: true, [style.playing]: source.playing})} style={{animationDuration: Math.round(source.el.duration * 100) / 100 + 's'}} />
                 <span className={style.bottom}></span>
               </div> : ''
             )}

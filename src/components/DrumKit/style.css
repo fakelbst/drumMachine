@@ -36,7 +36,9 @@
 }
 
 .playing {
-  animation: scale-playing 0.5s forwards;
+  animation-name: scale-playing;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes scale-playing {
