@@ -2,6 +2,7 @@ var webpack = require('webpack')
 var autoprefixer = require('autoprefixer')
 var precss = require('precss')
 var path = require('path')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   context : path.join(__dirname, './src'),
@@ -16,14 +17,18 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join(__dirname, './static'),
+    path: path.join(__dirname, './dist'),
     filename: 'bundle.js',
   },
   module: {
     loaders: [
       {
-        test: /\.html$/,
+        test: /\.(html|jpg)$/,
         loader: 'file?name=[name].[ext]'
+      },
+      {
+        test: /\.wav$/,
+        loader: 'url-loader?mimetype=audio/wav'
       },
       {
         test:   /\.css$/,
@@ -52,7 +57,10 @@ module.exports = {
     return [ autoprefixer, precss];
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+     new CopyWebpackPlugin([
+        { from: 'public/media', to: 'public/media' }
+     ])
   ],
   devServer: {
     contentBase: './src',
