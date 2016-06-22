@@ -1,10 +1,14 @@
 # drumMachine
 
 Run
-    npm start
+```
+npm start
+```
 
 Building
-    npm run build
+```
+npm run build
+```
 
 ## Credits
 Audio samples from [http://freewavesamples.com/](http://freewavesamples.com/)

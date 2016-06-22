@@ -3,7 +3,25 @@ import GoUnmute from 'react-icons/lib/go/unmute'
 import classnames from 'classnames'
 import style from './style.css'
 
+const keyMap = {
+  82: '_cymbal', // r
+  68: '_hihat_open', // d
+  67: '_hihat_closed', // c
+  86: '_bass', // v
+  70: '_snare', // f
+  72: '_tom1', // h
+  74: '_tom2', // j
+  75: '_tom3' // k
+}
+
 class DrumKit extends Component {
+
+  componentDidMount() {
+    let that = this
+    document.addEventListener('keydown', function(e){
+      that.props.actions.playSound(keyMap[e.keyCode])
+    })
+  }
 
   render() {
     const { sources, actions } = this.props
@@ -15,7 +33,7 @@ class DrumKit extends Component {
           <div className={classnames({[style.block]: true})} style={{backgroundColor: '#'+colorPatterns[randomIndex][index]}}>
             {sources.map(source =>
               source.type === c ?
-              <div className={classnames({[style.block]: true})} onClick={(el) => actions.playSound(source.title)}>
+              <div className={classnames({[style.block]: true})} onClick={(el) => actions.playSound(source.title)} onKeyPress={this.handleKeyPress}>
                 <span>{source.title.slice(1)}</span>
                 <GoUnmute className={classnames({[style.icon]: true, [style.playing]: source.playing})} style={{animationDuration: Math.round(source.el.duration * 100) / 100 + 's'}} />
                 <span className={style.bottom}></span>
